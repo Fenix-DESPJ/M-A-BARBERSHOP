@@ -14,14 +14,23 @@
 
         <p>
             <label>Nombre: </label>
-            <input type="text" name="Nombre" required />
-            
+            <input type="text" name="Nombre" 
+            placeholder="Escribe tu nombre completo"
+            minlength="3"
+            maxlength="40"
+            pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]+"
+            required />
         </p>
 
         <p>
           <label>Teléfono: </label>
-          <input type="tel" name="Telefono" required />
+          <input type="tel" name="Telefono" 
+          placeholder="Ej: 3213363546"
+          pattern="[0-9]{10}"
+          maxlength="10"
+          required />
         </p>
+        
       </fieldset>
 
        <p>
