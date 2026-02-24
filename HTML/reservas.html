@@ -3,62 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Reservas</title>
 </head>
 <body>
     <h1>RESERVAS</h1>
+
     <form action="Cita_confirmada.html" method="post">
+
      <fieldset>
         <legend>Información del corte</legend>
+    
         <p>
-            <label>Tipo de corte: </label>
-            <select name="tipo_corte">
-            <option value="">Seleccione</option>
-            <option value="Clasico">Corte clásico</option>
-            <option value="Fade">Fade</option>
-            <option value="Undercut">Undercut</option>
-            <option value="Militar">Militar</option>
+            <label for ="tipo_corte">Tipo de corte:</label>
+            <select id="tipo_corte" name="tipo_corte" required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="Clasico">Corte clásico</option>
+                <option value="Fade">Fade</option>
+                <option value="Undercut">Undercut</option>
+                <option value="Militar">Militar</option>
+                <option value="LowFade">Low Fade</option>
+                <option value="High Fade">High Fade</option>
+                <option value="BuzzCut">Buzz Cut</option>
           </select>
         </p>
 
+        <p><strong>Paquetes de servicios</strong></p>
+          
+        <div class="Servicios">  
+            <div>
+                <input type="checkbox" id="Lavado" name="Servicios" value="Lavado">
+                <label for="barba">Lavado</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="barba" name="Servicios" value="Barba">
+                <label for="barba">Arreglo de barba</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="cejas" name="Servicios" value="Cejas">
+                <label for="cejas">Perfilado de cejas</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="corte_barba" name="Servicios" value="CorteBarba">
+                <label for="corte_barba">Corte personalizado con barba</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="barba_cejas" name="Servicios" value="BarbaCejas">
+                <label for="barba_cejas">Barba + perfilado de cejas</label>
+            </div>
+        </div>
+
+
         <p>
-          <label>Paquetes de servicios</label><br />
-          <label><input type="checkbox" name="Lavado" />Lavado</label><br />
-          <label
-            ><input type="checkbox" name="Arreglo de barba" />Arreglo de
-            barba</label
-          ><br />
-          <label
-            ><input type="checkbox" name="Perfilado de cejas" />Perfilado de
-            cejas</label
-          ><br />
-          <label
-            ><input type="checkbox" name="Corte personalizado con barba" />Corte
-            personalizado con barba</label
-          ><br />
-          <label
-            ><input
-              type="checkbox"
-              name="Arreglo de barba con perfilado de cejas"
-            />Arreglo de barba con perfilado de cejas</label
-          >
+          <label for="fecha">Fecha: </label>
+          <input type="date" id="fecha" name="Fecha" required />
         </p>
 
         <p>
-          <label>Fecha: </label>
-          <input type="date" name="Fecha" required />
+          <label for="hora">Hora: </label>
+          <input type="time" id="hora" name="Hora" required min="09:00" max="20:00"/>
         </p>
 
         <p>
-          <label>Hora: </label>
-          <input type="time" name="Hora" required />
+            <label for="observaciones">Observaciones</label><br>
+            <textarea id="observaciones" name="Observaciones" rows="4" cols="40"
+                placeholder="Ej: Corte personalizado con una inicial"></textarea>
         </p>
+
       </fieldset>
 
       <p>
         <input type="submit" value="Reservar cita" />
       </p>
+
     </form>
+
     <a href="index.html" >Volver al inicio</a>
+    
 </body>
 </html>
