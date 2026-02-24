@@ -6,7 +6,28 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>HOLA!!!</h1>
-    <a href="iniciarSesion.html" target="_blank">¿DESEAS RESERVAR ESTE SERVICIO/PAQUETE?</a>
+        <h2>Reserva tu corte</h2>
+        <form action="reservas.html" method="post">
+
+        <fieldset>
+            <legend>Datos del cliente</legend>
+
+        <p>
+            <label>Nombre: </label>
+            <input type="text" name="Nombre" required />
+            
+        </p>
+
+        <p>
+          <label>Teléfono: </label>
+          <input type="tel" name="Telefono" required />
+        </p>
+      </fieldset>
+
+       <p>
+        <input type="submit" value="Siguiente" />
+      </p>
+
+        <a href="index.html" target="_blank">Volver al inicio</a>
 </body>
 </html>

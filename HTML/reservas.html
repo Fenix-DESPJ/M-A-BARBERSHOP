@@ -7,6 +7,58 @@
 </head>
 <body>
     <h1>RESERVAS</h1>
-    <a href="../index.html" >REGRESARR A INICIO!!!</a>
+    <form action="Cita_confirmada.html" method="post">
+     <fieldset>
+        <legend>Información del corte</legend>
+        <p>
+            <label>Tipo de corte: </label>
+            <select name="tipo_corte">
+            <option value="">Seleccione</option>
+            <option value="Clasico">Corte clásico</option>
+            <option value="Fade">Fade</option>
+            <option value="Undercut">Undercut</option>
+            <option value="Militar">Militar</option>
+          </select>
+        </p>
+
+        <p>
+          <label>Paquetes de servicios</label><br />
+          <label><input type="checkbox" name="Lavado" />Lavado</label><br />
+          <label
+            ><input type="checkbox" name="Arreglo de barba" />Arreglo de
+            barba</label
+          ><br />
+          <label
+            ><input type="checkbox" name="Perfilado de cejas" />Perfilado de
+            cejas</label
+          ><br />
+          <label
+            ><input type="checkbox" name="Corte personalizado con barba" />Corte
+            personalizado con barba</label
+          ><br />
+          <label
+            ><input
+              type="checkbox"
+              name="Arreglo de barba con perfilado de cejas"
+            />Arreglo de barba con perfilado de cejas</label
+          >
+        </p>
+
+        <p>
+          <label>Fecha: </label>
+          <input type="date" name="Fecha" required />
+        </p>
+
+        <p>
+          <label>Hora: </label>
+          <input type="time" name="Hora" required />
+        </p>
+      </fieldset>
+
+      <p>
+        <input type="submit" value="Reservar cita" />
+      </p>
+    </form>
+    <a href="index.html" >Volver al inicio</a>
 </body>
 </html>
