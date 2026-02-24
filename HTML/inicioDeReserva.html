@@ -1,42 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="../Assets/logo.png">
+    <title>M&A Barbershop</title>
 </head>
 <body>
-        <h2>Reserva tu corte</h2>
-        <form action="reservas.html" method="post">
+    <h2>Reserva tu corte</h2>
+    <form action="reservas.html" method="post">
 
         <fieldset>
             <legend>Datos del cliente</legend>
 
-        <p>
-            <label>Nombre: </label>
-            <input type="text" name="Nombre" 
-            placeholder="Escribe tu nombre completo"
-            minlength="3"
-            maxlength="40"
-            pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]+"
-            required />
-        </p>
+            <p>
+                <label>Nombre: </label>
+                <input type="text" name="Nombre" 
+                placeholder="Escribe tu nombre completo"
+                minlength="3"
+                maxlength="40"
+                pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]+"
+                required />
+            </p>
+
+            <p>
+                <label>Teléfono: </label>
+                <input type="tel" name="Telefono" 
+                placeholder="Ej: 3213363546"
+                pattern="[0-9]{10}"
+                maxlength="10"
+                required />
+            </p>
+            
+        </fieldset>
 
         <p>
-          <label>Teléfono: </label>
-          <input type="tel" name="Telefono" 
-          placeholder="Ej: 3213363546"
-          pattern="[0-9]{10}"
-          maxlength="10"
-          required />
+            <input type="submit" value="Siguiente" />
         </p>
-        
-      </fieldset>
 
-       <p>
-        <input type="submit" value="Siguiente" />
-      </p>
-
-        <a href="index.html" target="_blank">Volver al inicio</a>
+        <a href="../index.html" target="_blank">Volver al inicio</a>
 </body>
 </html>
