@@ -4,21 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../assets/icons/logo.png">
-    <link rel="stylesheet" href="../css/registro.css"
-    <title>M&A Barbershop</title>
+    <link rel="stylesheet" href="../css/registro.css">
+    <title>M&A Barbershop - Registro</title>
 </head>
 <body>
-    <h1>REGISTRESE</h1>
-        <form action="iniciarSesion.html" method="get">
-            <fieldset>
-                <legend>REGISTRATE CON NOSOTROS</legend>
-                    <label>Nombres: <input type="text" name="nombres" required></label> <br> <br>
-                    <label>Correo: <input type="email" name="email" required></label> <br> <br>
-                    <label>Fecha de Nacimiento: <input type="date" name="fechaNacimiento" required></label> <br> <br> 
-                    <label>Edad: <input type="number" name="edad" min="1" max="100" required></label> <br> <br>
-                    <input type="submit" value="Registrar">
-            </fieldset>
-        </form> <br> <br>
-    <a href="../index.html">REGRESAR A INICIO!!!</a>
+
+    <div class="card-wrapper">
+        <div class="card-header">
+            <h1>REGISTRO</h1>
+        </div>
+
+        <div class="card-body">
+            <form action="procesoIniciarSesion.html" method="get">
+                
+                <img src="../assets/icons/logo.png" class="logo-barber" alt="Logo">
+
+                <div class="input-group">
+                    <p class="field-label">Escriba su nombre</p>
+                    <input type="text" name="nombre" placeholder="nombre" required>
+                </div>
+
+                <div class="input-group">
+                    <p class="field-label">Correo electrónico</p>
+                    <input type="email" name="email" placeholder="correo" required>
+                </div>
+
+                <div class="input-group">
+                    <p class="field-label">Fecha de Nacimiento</p>
+                    <input type="date" name="fechaNacimiento" required>
+                </div>
+
+                <div class="input-group">
+                    <p class="field-label">Número de teléfono</p>
+                    <input type="text" name="numero" placeholder="número" 
+                           maxlength="10" minlength="10" pattern="[0-9]{10}"
+                           oninvalid="this.setCustomValidity('El número debe tener 10 dígitos')" 
+                           oninput="this.setCustomValidity('')" required>
+                </div>
+
+                <div class="input-group">
+                    <p class="field-label">Contraseña</p>
+                    <input type="password" name="contraseña" placeholder="contraseña" required>
+                </div>
+
+                <div class="input-group">
+                    <p class="field-label">Confirme su contraseña</p>
+                    <input type="password" name="confirmar_contraseña" placeholder="confirmar contraseña" required>
+                </div>
+
+                <input type="submit" value="Registrarse" class="btn-register">
+
+                <p class="login-footer">
+                    ¿Ya tiene una cuenta? <a href="iniciarSesion.html">inicie sesión aquí</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
 </body>
 </html>
