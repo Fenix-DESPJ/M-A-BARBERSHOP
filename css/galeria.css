@@ -1,0 +1,223 @@
+/* =========================================
+   1. CONFIGURACIÓN GENERAL
+   ========================================= */
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. NAVEGACIÓN (UNIFICADA)
+   ========================================= */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1200;
+    background-color: black;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-logo {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 24px;
+    border: 2px solid #f1c40f;
+    padding: 5px 10px;
+    margin-right: 10px;
+    color: #f1c40f;
+}
+
+.nav-logo-img {
+    height: 40px; /* Ajusta este valor (40px o 45px) para el tamaño mediano */
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #f1c40f;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 10px 20px;
+    white-space: nowrap;
+    text-decoration: none;
+    border: 1px solid #f1c40f;
+    border-radius: 8px;
+    color: #f1c40f;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+/* =========================================
+   3. HEADER Y GRILLA DE GALERÍA
+   ========================================= */
+.section-divider {
+    width: 85%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #333, transparent);
+    margin: 0 auto;
+}
+
+.page-header h1 {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 800;
+    margin: 40px 0;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-auto-rows: 300px;
+    gap: 30px;
+    padding: 0 5% 60px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.gallery-card {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 1px solid #222;
+    cursor: pointer;
+}
+
+.gallery-card.featured { grid-column: span 2; grid-row: span 2; }
+.gallery-card.tall { grid-row: span 2; }
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gallery-card:hover {
+    border-color: #f1c40f;
+    box-shadow: 0 0 30px rgba(241, 196, 15, 0.3);
+}
+
+.gallery-card:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.5);
+}
+
+.card-label {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    color: #f1c40f;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    transition: 0.4s;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+}
+
+.gallery-card:hover .card-label {
+    bottom: 0;
+}
+
+/* =========================================
+   4. HAMBURGUESA Y RESPONSIVO (CORREGIDO)
+   ========================================= */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    gap: 5px;
+    z-index: 1300;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #f1c40f;
+    transition: all 0.3s ease;
+}
+
+/* --- Ajustes Responsivos (Móvil) --- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex; /* Mantiene tu diseño de hamburguesa visible */
+    z-index: 1100; /* Asegura que el botón quede por encima del panel negro para poder cerrarlo */
+  }
+
+  .nav-links {
+    display: flex; /* INDISPENSABLE para que el contenido se vea */
+    position: fixed;
+    right: -100%; /* Escondido */
+    top: 0;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.98); /* Un poco más opaco para legibilidad */
+    width: 70%;
+    height: 100vh;
+    padding-top: 100px;
+    transition: 0.3s ease-in-out;
+    gap: 20px;
+    z-index: 1000;
+  }
+
+  /* La clase que activa el JS */
+  .nav-links.active {
+    right: 0; /* Desliza el menú hacia adentro */
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Animación de la hamburguesa (Mantenemos tu diseño intacto) */
+.menu-toggle.is-active .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.is-active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle.is-active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}

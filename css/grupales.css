@@ -1,5 +1,5 @@
 /* =========================================
-   1. CONFIGURACIÓN GENERAL Y VARIABLES
+   1. VARIABLES Y CONFIGURACIÓN BASE
    ========================================= */
 :root {
     --dorado: #f1c40f;
@@ -35,7 +35,7 @@ nav {
     padding: 20px 50px;
     background-color: var(--negro-puro);
     position: relative;
-    z-index: 1000;
+    z-index: 1100;
 }
 
 .nav-brand {
@@ -61,6 +61,11 @@ nav {
     display: block;
 }
 
+.nav-brand-name {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -81,13 +86,14 @@ nav {
     color: var(--dorado);
 }
 
-/* Estilo específico para botones de la nav */
+/* Estilo para el enlace activo */
 .nav-links a.active {
     background-color: var(--gris-oscuro);
     padding: 8px 15px;
     border-radius: 8px;
 }
 
+/* Botones con borde (Registrarse/Login) */
 .btn-outline {
     border: 1px solid var(--dorado);
     padding: 8px 18px;
@@ -102,41 +108,66 @@ nav {
 }
 
 /* =========================================
-   3. CABECERA Y SECCIONES
+   3. MENÚ HAMBURGUESA (MÓVIL)
+   ========================================= */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--dorado);
+    transition: 0.3s ease-in-out;
+}
+
+/* Animación a X */
+.menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+.menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* =========================================
+   4. ESTRUCTURA DE PÁGINA Y HEADER
    ========================================= */
 .page-header {
     text-align: center;
-    margin: 50px 0 20px 0;
+    margin: 40px 0 10px 0;
 }
 
 .page-header h1 {
-    font-size: 4.5rem;
+    font-size: 4rem;
     font-weight: 800;
-    letter-spacing: -2px;
     text-transform: capitalize;
+    letter-spacing: -1px;
 }
 
 .section-divider {
     width: 80%;
     height: 1px;
-    background: linear-gradient(to right, transparent, #444, transparent);
-    margin: 0 auto 50px auto;
+    background: linear-gradient(to right, transparent, #333, transparent);
+    margin: 0 auto 40px auto;
 }
 
 /* =========================================
-   4. LAYOUT DE SERVICIOS (GRILLA Y BANNER)
+   5. DISEÑO DE SERVICIOS (BANNER + GRID)
    ========================================= */
 .individual-container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 0 5% 50px 5%;
+    padding: 0 5% 40px 5%;
     gap: 40px;
     max-width: 1400px;
     margin: 0 auto;
 }
 
-/* Banner Lateral */
+/* Columna de Imagen Lateral */
 .side-banner {
     flex: 0 0 350px;
 }
@@ -144,7 +175,7 @@ nav {
 .card-img-placeholder img {
     width: 100%;
     border-radius: 20px;
-    border: 1px solid #333;
+    border: 1px solid #222;
     display: block;
 }
 
@@ -156,16 +187,16 @@ nav {
     border-radius: 15px;
     font-weight: 700;
     text-align: center;
-    margin-top: -30px;
+    margin-top: -30px; /* Superposición */
     position: relative;
     box-shadow: 0 5px 15px rgba(0,0,0,0.4);
 }
 
-/* Grilla de ítems amarillos */
+/* Grilla de ítems (Cejas, Cortes, etc.) */
 .items-grid {
     flex: 1;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 20px;
 }
 
@@ -173,12 +204,12 @@ nav {
     background-color: var(--dorado);
     color: var(--negro-puro);
     padding: 20px;
-    border-radius: 35px;
-    min-height: 160px;
+    border-radius: 35px; /* Estilo burbuja */
+    min-height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
 }
 
 .price-item:hover {
@@ -186,16 +217,17 @@ nav {
 }
 
 .item-info h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 5px;
     font-weight: 700;
+    text-transform: lowercase; /* Como en tu captura */
 }
 
-.price { font-weight: 600; font-size: 1.1rem; }
-.duration { font-size: 0.9rem; opacity: 0.8; }
+.price { font-weight: 700; font-size: 1rem; }
+.duration { font-size: 0.85rem; opacity: 0.9; }
 
-/* Botones internos de las cards */
-.btn-reserve-small, .btn-back {
+/* Botones de Reserva e Inferiores */
+.btn-reserve-small, .btn-action-light {
     align-self: flex-end;
     background-color: var(--blanco);
     color: var(--negro-puro);
@@ -204,38 +236,39 @@ nav {
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 700;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 /* =========================================
-   5. FOOTER Y RESPONSIVO
+   6. PAGINACIÓN Y ACCIONES FINALES
    ========================================= */
-.footer-actions {
+.pagination-footer {
     display: flex;
     justify-content: flex-end;
-    padding: 20px 8%;
+    gap: 15px;
+    padding: 0 8% 40px 8%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.btn-back {
+.btn-action-light {
     padding: 10px 25px;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-/* Hamburguesa */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    z-index: 1100;
+.btn-action-light:hover {
+    background-color: #f8f8f8;
+    transform: scale(1.05);
 }
 
-.bar {
-    width: 25px;
-    height: 3px;
-    background-color: var(--dorado);
-    transition: 0.3s;
+/* =========================================
+   7. RESPONSIVIDAD (TABLETS Y MÓVILES)
+   ========================================= */
+@media (max-width: 1100px) {
+    .items-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 992px) {
@@ -243,30 +276,44 @@ nav {
         flex-direction: column;
         align-items: center;
     }
-    .side-banner { flex: none; width: 100%; max-width: 400px; }
+    .side-banner {
+        flex: none;
+        width: 100%;
+        max-width: 400px;
+    }
+    .items-grid {
+        width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
-    nav { padding: 15px 25px; }
-    .menu-toggle { display: flex; }
+    nav { padding: 15px 20px; }
     
+    .menu-toggle { display: flex; }
+
     .nav-links {
+        display: flex;
         position: fixed;
-        right: -100%;
+        right: -100%; /* Escondido */
         top: 0;
         flex-direction: column;
-        background-color: rgba(0,0,0,0.98);
-        width: 70%;
+        background-color: rgba(0, 0, 0, 0.98);
+        width: 75%;
         height: 100vh;
         padding-top: 100px;
-        transition: 0.4s;
+        transition: 0.4s ease;
+        gap: 30px;
     }
 
-    .nav-links.active { right: 0; }
-    .page-header h1 { font-size: 2.5rem; }
-}
+    .nav-links.active {
+        right: 0; /* Entra el menú */
+    }
 
-/* Animación X */
-.menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
-.menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-.menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    .page-header h1 {
+        font-size: 2.8rem;
+    }
+    
+    .pagination-footer {
+        justify-content: center;
+    }
+}

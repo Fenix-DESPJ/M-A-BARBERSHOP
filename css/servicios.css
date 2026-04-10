@@ -28,6 +28,13 @@ nav {
   color: #fff;
 }
 
+.nav-logo-img {
+    height: 40px; /* Ajusta este valor (40px o 45px) para el tamaño mediano */
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
 .nav-logo {
   font-family: 'Bebas Neue', cursive;
   font-size: 24px;
