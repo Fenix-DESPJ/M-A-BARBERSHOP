@@ -1,0 +1,30 @@
+body {
+    background-color: black;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    height: 80px;
+    padding: 0;
+    background-color: black;
+}
+
+
+.navegador{
+  display: flex;
+  justify-content:flex-end;
+  align-items:center;
+  list-style: none;    
+  gap: 50px;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
