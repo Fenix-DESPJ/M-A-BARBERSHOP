@@ -1,0 +1,127 @@
+/* Centrado total */
+body {
+    background-color: #0d0d0d;
+    color: #fff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Contenedor principal */
+.card-wrapper {
+    width: 380px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.7);
+    border: 1px solid #333;
+}
+
+/* Header Gris del mockup */
+.card-header {
+    background-color: #555555;
+    padding: 15px 20px;
+}
+
+.card-header h1 {
+    margin: 0;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+/* Cuerpo oscuro */
+.card-body {
+    background-color: #1a1a1a;
+    padding: 25px 25px 15px;
+}
+
+.logo-barber {
+    display: block;
+    margin: 0 auto 25px;
+    width: 100px;
+}
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.field-label {
+    margin: 0 0 8px 5px;
+    color: #aaaaaa;
+    font-size: 0.9rem;
+}
+
+/* Inputs negros (con !important para evitar cuadros blancos) */
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #000 !important;
+    color: #fff !important;
+    border: 1px solid #333;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+/* Estilo para el placeholder interno */
+input::placeholder {
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Icono del calendario en blanco */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+/* Botón Registrarse */
+.btn-register {
+    width: 80%; /* Un poco más pequeño como en tu mockup */
+    display: block;
+    margin: 20px auto 10px;
+    padding: 14px;
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-register:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Texto y link inferior */
+.login-footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+    font-size: 0.85rem;
+}
+
+.login-footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Evitar que el autocompletado del navegador ponga los campos blancos */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #000 inset !important;
+    -webkit-text-fill-color: white !important;
+}

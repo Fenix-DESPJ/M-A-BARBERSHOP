@@ -1,0 +1,93 @@
+/* Fondo de toda la página */
+.login-page {
+    background-color: #000; /* Fondo negro total como el mockup */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* La tarjeta central */
+.main-card {
+    background-color: #1a1a1a;
+    width: 400px;
+    border-radius: 25px;
+    overflow: hidden;
+    color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+/* Franja gris superior */
+.header-msg {
+    background-color: #555;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.login-form {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-container img {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+/* Estilo de los campos de texto */
+.field {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.field input {
+    width: 100%;
+    padding: 12px;
+    background-color: #000;
+    border: 1px solid #333;
+    border-radius: 10px;
+    color: white;
+    box-sizing: border-box;
+}
+
+/* Botón negro grande */
+.btn-submit {
+    background-color: #000;
+    color: white;
+    border: 1px solid #333;
+    padding: 15px 40px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 20px 0;
+    width: 60%;
+}
+
+.footer-links {
+    text-align: center;
+    font-size: 13px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.back-home {
+    display: block;
+    margin-top: 10px;
+    color: #4a90e2 !important; /* Azul para resaltar el regreso */
+}
