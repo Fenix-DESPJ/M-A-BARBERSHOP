@@ -1,0 +1,252 @@
+/* --- Configuración General --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000; /* Fondo negro profundo */
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+}
+
+/* --- Navegación --- */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: transparent;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-logo {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 24px;
+  border: 2px solid #f1c40f; /* Borde dorado */
+  padding: 5px 10px;
+  margin-right: 10px;
+}
+
+.nav-brand-name {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: #f1c40f; /* Dorado al pasar el mouse o estar activo */
+}
+
+.btn-outline {
+  border: 1px solid #fff;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+/* --- Encabezado --- */
+.page-header {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.page-header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4rem;
+  font-weight: 800;
+  text-transform: capitalize;
+  letter-spacing: -2px;
+}
+
+/* Divisores laterales del título (las líneas que se ven en la imagen) */
+.section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -30px auto 50px auto;
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #555, transparent);
+}
+
+/* --- Cuadrícula de Servicios --- */
+.services-grid {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* --- Ajuste en la cuadrícula --- */
+.service-card {
+  width: 100%;        /* Por defecto ocupa el ancho disponible */
+  max-width: 450px;   /* Pero no crece más de 450px */
+  margin: 0 auto;     /* Centra la tarjeta si se queda sola en una fila */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-placeholder {
+  width: 100%;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #333;
+}
+
+.card-img-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- Botones de las Cards --- */
+.card-body {
+  display: flex;
+  justify-content: center;
+  margin-top: -30px; /* Eleva el botón sobre la imagen */
+}
+
+.card-btn {
+  background-color: #f1c40f; /* El amarillo de la imagen */
+  color: #000;
+  text-decoration: none;
+  padding: 15px 40px;
+  border-radius: 15px;
+  font-weight: 700;
+  font-size: 18px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: background-color 0.3s;
+  text-align: center;
+  min-width: 250px;
+}
+
+.card-btn:hover {
+  background-color: #d4ac0d;
+}
+
+/* --- Mejoras en el Media Query --- */
+@media (max-width: 768px) {
+  nav {
+    padding: 15px 20px; /* Menos espacio a los lados en móvil */
+  }
+
+  .nav-links {
+    display: none; 
+  }
+
+  .page-header h1 {
+    font-size: 2.2rem; /* Un poco más pequeño para evitar saltos de línea raros */
+  }
+
+  .services-grid {
+    gap: 30px; /* Reducimos el espacio entre fotos en móvil */
+  }
+
+  .card-btn {
+    min-width: 80%; /* El botón se adapta al ancho del móvil */
+    font-size: 16px;
+  }
+}
+
+.btn-outline {
+  display: inline-block; /* Permite que el padding funcione correctamente */
+  padding: 10px 20px;    /* Espacio interno para que no se vea apretado */
+  white-space: nowrap;   /* ¡ESTA ES LA CLAVE! Evita que el texto salte de línea */
+  text-decoration: none;
+  border: 1px solid #f1c40f;
+  border-radius: 8px;
+  color: #f1c40f;
+  transition: all 0.3s ease;
+}
+
+/* Estilos iniciales del botón (oculto en escritorio) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  gap: 5px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #f1c40f; /* Dorado */
+  transition: all 0.3s ease;
+}
+
+/* --- Ajustes Responsivos (Móvil) --- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex; /* Mantiene tu diseño de hamburguesa visible */
+    z-index: 1100; /* Asegura que el botón quede por encima del panel negro para poder cerrarlo */
+  }
+
+  .nav-links {
+    display: flex; /* INDISPENSABLE para que el contenido se vea */
+    position: fixed;
+    right: -100%; /* Escondido */
+    top: 0;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.98); /* Un poco más opaco para legibilidad */
+    width: 70%;
+    height: 100vh;
+    padding-top: 100px;
+    transition: 0.3s ease-in-out;
+    gap: 20px;
+    z-index: 1000;
+  }
+
+  /* La clase que activa el JS */
+  .nav-links.active {
+    right: 0; /* Desliza el menú hacia adentro */
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Animación de la hamburguesa (Mantenemos tu diseño intacto) */
+.menu-toggle.is-active .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.is-active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle.is-active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}

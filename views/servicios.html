@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>M&A Barbería — Servicios</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/servicios.css"/>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="../index.html">
+    <div class="nav-logo">M&A</div>
+    <span class="nav-brand-name">M&A</span>
+  </a>
+
+  <button class="menu-toggle" id="mobile-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <ul class="nav-links">
+    <li><a href="../index.html">Inicio</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+    <li><a href="servicios.html" class="active">Servicios</a></li>
+    <li><a href="../cliente/reservar.html">Reservar</a></li>
+    <li><a href="../auth/registro.html" class="btn-outline">Registrarse</a></li>
+    <li><a href="../auth/login.html" class="btn-outline">Iniciar sesión</a></li>
+  </ul>
+</nav>
+
+  <header class="page-header">
+    <h1>Servicios</h1>
+  </header>
+
+  <div class="section-divider"></div>
+
+  <main class="services-grid">
+
+    <div class="service-card" onclick="window.location.href='servicios-individuales.html'">
+      <div class="card-img-placeholder">
+        <img src="../assets/img/individuales.jpg" alt="Servicios individuales">
+      </div>
+      <div class="card-body">
+        <a href="servicios-individuales.html" class="card-btn">Servicios individuales</a>
+      </div>
+    </div>
+
+    <div class="service-card" onclick="window.location.href='servicios-grupales.html'">
+      <div class="card-img-placeholder">
+        <img src="../assets/img/grupales.jpg" alt="Paquetes de servicios">
+      </div>
+      <div class="card-body">
+        <a href="servicios-grupales.html" class="card-btn">Paquetes de servicios</a>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="../js/servicios.js"></script>
+</body>
+</html>

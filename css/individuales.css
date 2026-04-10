@@ -1,0 +1,265 @@
+/* =========================================
+   1. CONFIGURACIÓN GENERAL Y VARIABLES
+   ========================================= */
+:root {
+    --dorado: #f1c40f;
+    --negro-puro: #000000;
+    --negro-suave: #111111;
+    --gris-oscuro: #222222;
+    --blanco: #ffffff;
+    --fuente-titulos: 'Bebas Neue', cursive;
+    --fuente-cuerpo: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--negro-puro);
+    color: var(--blanco);
+    font-family: var(--fuente-cuerpo);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. NAVEGACIÓN (NAVBAR)
+   ========================================= */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: var(--negro-puro);
+    position: relative;
+    z-index: 1000;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+.nav-logo {
+    font-family: var(--fuente-titulos);
+    font-size: 24px;
+    border: 2px solid var(--dorado);
+    padding: 5px 10px;
+    margin-right: 10px;
+    color: var(--dorado);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--blanco);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--dorado);
+}
+
+/* Estilo específico para botones de la nav */
+.nav-links a.active {
+    background-color: var(--gris-oscuro);
+    padding: 8px 15px;
+    border-radius: 8px;
+}
+
+.btn-outline {
+    border: 1px solid var(--dorado);
+    padding: 8px 18px;
+    border-radius: 8px;
+    color: var(--dorado) !important;
+    white-space: nowrap;
+}
+
+.btn-outline:hover {
+    background-color: var(--dorado);
+    color: var(--negro-puro) !important;
+}
+
+/* =========================================
+   3. CABECERA Y SECCIONES
+   ========================================= */
+.page-header {
+    text-align: center;
+    margin: 50px 0 20px 0;
+}
+
+.page-header h1 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    letter-spacing: -2px;
+    text-transform: capitalize;
+}
+
+.section-divider {
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #444, transparent);
+    margin: 0 auto 50px auto;
+}
+
+/* =========================================
+   4. LAYOUT DE SERVICIOS (GRILLA Y BANNER)
+   ========================================= */
+.individual-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 5% 50px 5%;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Banner Lateral */
+.side-banner {
+    flex: 0 0 350px;
+}
+
+.card-img-placeholder img {
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid #333;
+    display: block;
+}
+
+.card-label {
+    display: block;
+    background-color: var(--dorado);
+    color: var(--negro-puro);
+    padding: 15px;
+    border-radius: 15px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: -30px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* Grilla de ítems amarillos */
+.items-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.price-item {
+    background-color: var(--dorado);
+    color: var(--negro-puro);
+    padding: 20px;
+    border-radius: 35px;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.price-item:hover {
+    transform: translateY(-5px);
+}
+
+.item-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.price { font-weight: 600; font-size: 1.1rem; }
+.duration { font-size: 0.9rem; opacity: 0.8; }
+
+/* Botones internos de las cards */
+.btn-reserve-small, .btn-back {
+    align-self: flex-end;
+    background-color: var(--blanco);
+    color: var(--negro-puro);
+    text-decoration: none;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* =========================================
+   5. FOOTER Y RESPONSIVO
+   ========================================= */
+.footer-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 8%;
+}
+
+.btn-back {
+    padding: 10px 25px;
+    font-size: 1rem;
+}
+
+/* Hamburguesa */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 1100;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--dorado);
+    transition: 0.3s;
+}
+
+@media (max-width: 992px) {
+    .individual-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .side-banner { flex: none; width: 100%; max-width: 400px; }
+}
+
+@media (max-width: 768px) {
+    nav { padding: 15px 25px; }
+    .menu-toggle { display: flex; }
+    
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        flex-direction: column;
+        background-color: rgba(0,0,0,0.98);
+        width: 70%;
+        height: 100vh;
+        padding-top: 100px;
+        transition: 0.4s;
+    }
+
+    .nav-links.active { right: 0; }
+    .page-header h1 { font-size: 2.5rem; }
+}
+
+/* Animación X */
+.menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+.menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
