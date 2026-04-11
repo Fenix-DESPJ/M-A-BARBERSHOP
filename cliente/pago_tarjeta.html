@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pago tarjeta de credito</title>
+  <link rel="stylesheet" href="../css/pago_tarjeta.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      <img src="../assets/icons/logo.png" alt="logo">
+      <span>M&A</span>
+    </div>
+
+    <nav class="menu">
+      <a href="home.html">Inicio</a>
+      <a href="../views/contacto.html">Contacto</a>
+      <a href="../views/servicios.html">Servicios</a>
+      <a href="../views/galeria.html">Galeria</a>
+      <a href="reservar.html" class="active">Reservar</a>
+    </nav>
+
+    <div class="bell">🔔</div>
+  </header>
+
+  <main class="tarjeta-page">
+    <div class="top-lines">
+      <div class="line"></div>
+      <h1>Pago tarjeta de credito</h1>
+      <div class="line"></div>
+    </div>
+
+    <section class="payment-card">
+
+      <div class="left-panel">
+        <label for="numero">Ingrese el numero de su tarjeta</label>
+        <input type="text" id="numero" placeholder="Numero Tarjeta">
+
+        <label for="fecha">Ingrese fecha de expedicion</label>
+        <input type="text" id="fecha" placeholder="Fecha de expiracion">
+
+        <label for="titular">Nombre del titular</label>
+        <input type="text" id="titular" placeholder="Titular de la tarjeta">
+
+        <label for="codigo">Codigo tarjeta</label>
+        <input type="text" id="codigo" placeholder="Codigo de seguridad">
+
+        <div class="action-buttons">
+            <a href="confirmacion.html" class="btn-pagar">Realizar Pago</a>
+            <a href="reservar.html" class="btn-cancelar">Cancelar</a>
+        </div>
+      </div>
+
+      <div class="center-panel">
+        <h2>Informacion de la reserva</h2>
+        <img src="../assets/icons/logo.png" alt="logo M&A">
+      </div>
+
+      <div class="right-panel">
+        <div class="info-group">
+          <label>Servicio Adquirido:</label>
+          <input type="text" value="Corte de cabello" readonly>
+        </div>
+
+        <div class="info-group">
+          <label>Barbero escogido:</label>
+          <input type="text" value="Maicol" readonly>
+        </div>
+
+        <div class="info-group">
+          <label>Dia de la Reserva:</label>
+          <input type="text" value="18/09/2025" readonly>
+        </div>
+
+        <div class="info-group">
+          <label>Ubicacion:</label>
+          <input type="text" value="carrera 27 #5a 09 Bogotá" readonly>
+        </div>
+
+        <div class="reminder-box">
+          <p>¿Desea recibir un recordatorio personalizado de su reserva?</p>
+
+          <div class="reminder-buttons">
+            <button class="btn-si">Si</button>
+            <button class="btn-no">NO</button>
+          </div>
+
+          <div class="reminder-options">
+            <div>
+              <label>Seleccione hora del recordatorio</label>
+              <input type="time" value="00:00">
+            </div>
+
+            <div class="auto-text">
+              <p>Recordatorio automatico activo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="back-container">
+      <a href="reservar.html" class="btn-back">regresar</a>
+    </div>
+  </main>
+
+</body>
+</html>
