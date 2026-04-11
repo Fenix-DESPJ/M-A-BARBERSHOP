@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservas - M&A</title>
+  <link rel="stylesheet" href="../css/reservar.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      <img src="../assets/icons/logo.png" alt="logo">
+      <span>M&A</span>
+    </div>
+
+    <nav class="menu">
+      <a href="../cliente/home.html">Inicio</a>
+      <a href="../views/contacto.html">Contacto</a>
+      <a href="../views/servicios.html">Servicios</a>
+      <a href="../views/galeria.html">Galeria</a>
+      <a href="../cliente/reservar.html" class="active">Reservar</a>
+    </nav>
+
+    <div class="bell">🔔</div>
+  </header>
+
+  <main class="reservas-page">
+    <div class="top-lines">
+      <div class="line"></div>
+      <h1>Reservas</h1>
+      <div class="line"></div>
+    </div>
+
+    <section class="reservas-content">
+
+      <aside class="sidebar">
+        <form id="formReserva" class="booking-form">
+
+          <label for="servicio">Servicio:</label>
+          <select id="servicio" name="servicio" required>
+            <option value="">Seleccione un servicio</option>
+            <option value="Corte clásico">Corte clásico</option>
+            <option value="Barba">Barba</option>
+            <option value="Cejas">Cejas</option>
+            <option value="Corte + barba">Corte + barba</option>
+          </select>
+
+          <label for="barbero">Barbero:</label>
+          <select id="barbero" name="barbero" required>
+            <option value="">Seleccione un barbero</option>
+            <option value="Juan Pablo">Juan Pablo</option>
+            <option value="Andrés">Andrés</option>
+            <option value="Sebastián">Sebastián</option>
+          </select>
+
+          <label for="fecha">Fecha:</label>
+          <input type="date" id="fecha" name="fecha" required>
+
+          <label for="hora">Hora:</label>
+          <select id="hora" name="hora" required>
+            <option value="">Seleccione una hora</option>
+            <option value="08:00">08:00 AM</option>
+            <option value="09:00">09:00 AM</option>
+            <option value="10:00">10:00 AM</option>
+            <option value="11:00">11:00 AM</option>
+            <option value="12:00">12:00 PM</option>
+            <option value="13:00">01:00 PM</option>
+            <option value="14:00">02:00 PM</option>
+            <option value="15:00">03:00 PM</option>
+            <option value="16:00">04:00 PM</option>
+            <option value="17:00">05:00 PM</option>
+            <option value="18:00">06:00 PM</option>
+          </select>
+
+          <label for="pago">Método de pago:</label>
+          <select id="pago" name="pago" required>
+            <option value="">Seleccione una opción</option>
+            <option value="tarjeta">Tarjeta de crédito</option>
+            <option value="pse">PSE</option>
+            <option value="efectivo">Efectivo</option>
+          </select>
+
+          <button type="submit" class="btn-reservar">Reservar</button>
+        </form>
+      </aside>
+
+      <section class="schedule-box">
+        <h2>Horarios disponibles</h2>
+
+        <div class="hours-grid">
+          <div class="hour-btn">8:00 AM</div>
+          <div class="hour-btn">9:00 AM</div>
+          <div class="hour-btn">10:00 AM</div>
+          <div class="hour-btn">11:00 AM</div>
+          <div class="hour-btn">12:00 PM</div>
+          <div class="hour-btn">1:00 PM</div>
+          <div class="hour-btn">2:00 PM</div>
+          <div class="hour-btn">3:00 PM</div>
+          <div class="hour-btn">4:00 PM</div>
+          <div class="hour-btn">5:00 PM</div>
+          <div class="hour-btn">6:00 PM</div>
+        </div>
+      </section>
+
+    </section>
+
+    <div class="back-container">
+      <a href="../cliente/home.html" class="btn-back">Regresar</a>
+    </div>
+  </main>
+
+<script>
+const form = document.getElementById("formReserva");
+
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const servicio = document.getElementById("servicio").value;
+    const barbero = document.getElementById("barbero").value;
+    const fecha = document.getElementById("fecha").value;
+    const hora = document.getElementById("hora").value;
+    const metodoPago = document.getElementById("pago").value;
+
+    if (!servicio || !barbero || !fecha || !hora || !metodoPago) {
+        alert("Por favor complete todos los campos");
+        return;
+    }
+
+    if (metodoPago === "pse") {
+        window.location.href = "pago_pse.html";
+    } else if (metodoPago === "tarjeta") {
+        window.location.href = "pago_tarjeta.html";
+    } else if (metodoPago === "efectivo") {
+        window.location.href = "confirmacion.html";
+    }
+});
+</script>
+
+</body>
+</html>
