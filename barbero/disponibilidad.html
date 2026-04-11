@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disponibilidad Barbero - M&A</title>
+  <link rel="stylesheet" href="../css/disponibilidad.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      <img src="../assets/icons/logo.png" alt="logo">
+      <span>M&A</span>
+    </div>
+
+    <nav class="menu">
+      <a href="../barbero/home.html">Inicio</a>
+      <a href="../views/contacto.html">Contacto</a>
+      <a href="../views/servicios.html">Servicios</a>
+      <a href="../views/galeria.html">Galeria</a>
+      <a href="../barbero/agenda.html">Agenda</a>
+      <a href="../barbero/disponibilidad.html" class="active">Disponibilidad</a>
+    </nav>
+
+    <div class="bell">🔔</div>
+  </header>
+
+  <main class="reservas-page">
+    <div class="top-lines">
+      <div class="line"></div>
+      <h1>Disponibilidad</h1>
+      <div class="line"></div>
+    </div>
+
+    <section class="reservas-content">
+
+      <aside class="sidebar">
+        <form class="booking-form">
+          <label for="fecha-disponibilidad">Gestionar Día:</label>
+          <input type="date" id="fecha-disponibilidad" name="fecha-disponibilidad" value="2026-04-11">
+          <button type="button" class="btn-reservar">Cargar Horarios</button>
+        </form>
+      </aside>
+
+      <section class="schedule-box">
+        <h2>Gestión de Turnos</h2>
+
+        <div class="hours-grid">
+          <div class="hour-btn">
+            <span class="cita-hora">08:00 AM</span>
+            <span class="cita-cliente">Estado: Disponible</span>
+            <span class="cita-servicio">Sin citas asignadas</span>
+            <button class="btn-status disponible">Activo</button>
+          </div>
+
+          <div class="hour-btn ocupado">
+            <span class="cita-hora">09:00 AM</span>
+            <span class="cita-cliente">Estado: Ocupado</span>
+            <span class="cita-servicio">Cita con Maicol Steven</span>
+            <button class="btn-status blocked" disabled>Bloqueado</button>
+          </div>
+
+          <div class="hour-btn">
+            <span class="cita-hora">10:00 AM</span>
+            <span class="cita-cliente">Estado: Disponible</span>
+            <span class="cita-servicio">Sin citas asignadas</span>
+            <button class="btn-status disponible">Activo</button>
+          </div>
+
+          <div class="hour-btn deshabilitado">
+            <span class="cita-hora">11:00 AM</span>
+            <span class="cita-cliente">Estado: No Disponible</span>
+            <span class="cita-servicio">Hora de descanso</span>
+            <button class="btn-status inactivar">Inactivo</button>
+          </div>
+        </div>
+      </section>
+
+    </section>
+
+    <div class="back-container">
+      <a href="../index.html" class="btn-back">Regresar</a>
+    </div>
+  </main>
+
+</body>
+</html>
