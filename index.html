@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M&A Barbería — Donde la elegancia se encuentra con la fuerza</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css    " />
 </head>
 <body>
 
     <nav>
-        <a class="nav-brand" href="index.html">
-            <div class="nav-logo">M&A</div>
-            <span class="nav-brand-name">M&A</span>
-        </a>
+        <a class="nav-brand" href="../index.html">
+    <img src="../assets/icons/logo.png" alt="Logo M&A Barbería" class="nav-logo-img">
+    <span class="nav-brand-name"></span>
+    </a>
+    
         <button class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -21,10 +22,10 @@
         </button>
         <ul class="nav-links">
             <li><a href="index.html" class="active">Inicio</a></li>
-            <li><a href="pages/contacto.html">Contacto</a></li>
-            <li><a href="pages/servicios.html">Servicios</a></li>
-            <li><a href="galeria.html">Galería</a></li>
-            <li><a href="pages/reservar.html">Reservar</a></li>
+            <li><a href="views/contacto.html">Contacto</a></li>
+            <li><a href="views/servicios.html">Servicios</a></li>
+            <li><a href="views/galeria.html">Galería</a></li>
+            <li><a href="cliente/reservar.html">Reservar</a></li>
             <li><a href="auth/registro.html" class="btn-outline">Registrarse</a></li>
             <li><a href="auth/login.html" class="btn-outline">Iniciar sesión</a></li>
         </ul>
@@ -32,14 +33,12 @@
 
     <header class="hero">
         <div class="hero-image-container">
-            <img src="assets/img/local-interior.jpg" alt="Interior de M&A Barbería" class="hero-img">
+            <img src="assets/img/grupales.jpg" alt="Interior de M&A Barbería" class="hero-img">
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
             <h2 class="hero-slogan">“DONDE LA ELEGANCIA SE ENCUENTRA CON LA FUERZA”</h2>
             <div class="hero-buttons">
-                <a href="pages/servicios.html" class="btn-main">Ver Servicios</a>
-                <a href="pages/reservar.html" class="btn-reserve">Reserva tu cita</a>
             </div>
         </div>
     </header>
@@ -49,6 +48,6 @@
         <p>Vive la experiencia de un corte premium en un ambiente diseñado para el hombre moderno.</p>
     </section>
 
-    <script src="js/servicios.js"></script>
+    <script src="js/main.js"></script> 
 </body>
 </html>
